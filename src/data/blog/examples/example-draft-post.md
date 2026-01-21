@@ -1,6 +1,6 @@
 ---
 title: Example Draft Post - Blog Template Guide
-author: Your Name
+author: atooooomic
 pubDatetime: 2024-01-01T00:00:00Z
 modDatetime: 2024-01-02T00:00:00Z
 slug: example-draft-post
@@ -13,7 +13,7 @@ tags:
 description:
   This is a comprehensive template demonstrating all the patterns and structures
   used in AstroPaper blog posts. Use this as a reference when creating new posts.
-timezone: "Asia/Seoul"
+timezone: "America/New_York"
 # ogImage: ../../assets/images/example.png
 # canonicalURL: https://example.org/canonical-url
 ---
