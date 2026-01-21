@@ -22,65 +22,66 @@ I've been using the Claude Code **Superpowers plugin**, and it's been absolutely
 
 ## Installation
 
-Getting started with Superpowers is straightforward. First, install Claude Code if you haven't already:
+Getting started with Superpowers is straightforward. First, register the Superpowers marketplace:
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+/plugin marketplace add obra/superpowers-marketplace
 ```
 
-Then install the Superpowers plugin:
+Then install the plugin:
 
 ```bash
-claude plugins install superpowers
+/plugin install superpowers@superpowers-marketplace
 ```
 
-That's it! The plugin is now ready to use.
+Verify the installation by running `/help` to see the available commands. That's it! The plugin is now ready to use.
 
 ## Available Commands
 
-Superpowers provides several powerful commands to enhance your workflow:
+Superpowers provides three core commands that transform your development workflow:
 
-### `/brainstorm` - Interactive Planning
+### `/superpowers:brainstorm` - Interactive Design Refinement
 
-The core command that makes Superpowers special. It guides you through planning your implementation with intelligent questions.
+The core command that makes Superpowers special. It refines your ideas through intelligent questions and presents designs for your validation.
 
 ```bash
-/brainstorm I need to add user authentication to my app
+/superpowers:brainstorm I need to add user authentication to my app
 ```
 
-Claude will then ask clarifying questions about:
+Claude will ask clarifying questions about:
 - Authentication method (JWT, OAuth, etc.)
 - Database schema
 - Security requirements
 - Session management
 - And more...
 
-### `/implement` - Execute the Plan
+### `/superpowers:write-plan` - Create Implementation Plan
 
-Once you've finalized your plan through brainstorming, use this command to start implementation:
+Breaks down your work into bite-sized tasks with exact file paths and verification steps. This ensures nothing gets overlooked.
 
 ```bash
-/implement
+/superpowers:write-plan
 ```
 
-Claude will execute the approved plan step by step.
+The plan includes specific files to modify, changes to make, and how to verify each step.
 
-### `/review` - Code Review
+### `/superpowers:execute-plan` - Execute Plan in Batches
 
-Get a comprehensive review of your code changes:
+Dispatches agents through tasks with staged reviews. Claude executes the approved plan step by step, allowing you to review progress at each stage.
 
 ```bash
-/review
+/superpowers:execute-plan
 ```
 
 ## My Workflow with Superpowers
 
 Here's how I typically use Superpowers:
 
-1. **Start with `/brainstorm`** and describe what I need in simple terms
-2. **Answer Claude's questions** as it guides me through the implementation details
-3. **Review the proposed solution** to make sure it aligns with my vision
-4. **Approve and let `/implement` handle the rest**
+1. **Start with `/superpowers:brainstorm`** and describe what I need in simple terms
+2. **Answer Claude's questions** as it refines the design through interactive dialogue
+3. **Run `/superpowers:write-plan`** to create a detailed implementation plan
+4. **Review the plan** to make sure it aligns with my vision
+5. **Execute with `/superpowers:execute-plan`** and watch Claude bring it to life in stages
 
 That's it. Seriously.
 
@@ -88,7 +89,7 @@ That's it. Seriously.
 
 The genius of Superpowers is that it transforms Claude from a tool you command into a collaborative partner. Instead of needing to know exactly what to ask for, you can start with a rough idea and let Claude's questioning guide you to a well-thought-out solution.
 
-> **Pro tip**: Don't overthink your initial prompt. The brainstorming command is designed to extract clarity from ambiguity. Start broad, and let the conversation refine your requirements.
+> **Pro tip**: Don't overthink your initial prompt. The `/superpowers:brainstorm` command is designed to extract clarity from ambiguity. Start broad, and let the conversation refine your requirements.
 
 ### The Real-World Experience
 
@@ -121,12 +122,23 @@ I've found Superpowers particularly valuable for:
 
 Sure, there might be other plugins or custom configurations out there with more advanced features. But if you want something that's **well-crafted, ready to use, and actually works** right out of the box - Superpowers is unbeatable.
 
-The best part? You don't need to spend hours reading documentation or tweaking configuration files. Just install it, run `/brainstorm`, and start building.
+The best part? You don't need to spend hours reading documentation or tweaking configuration files. Just install it, run `/superpowers:brainstorm`, and start building.
 
 ## Resources
 
-- [Claude Code documentation](https://github.com/anthropics/claude-code)
-- [Superpowers plugin repository](https://github.com/anthropics/claude-code-superpowers)
+- [Superpowers repository](https://github.com/obra/superpowers) - Main repository and documentation
+- [Superpowers marketplace](https://github.com/obra/superpowers-marketplace) - Curated Claude Code plugin marketplace
+- [Superpowers lab](https://github.com/obra/superpowers-lab) - Experimental skills and new techniques
+
+## Updating Superpowers
+
+Keep your plugin up to date with:
+
+```bash
+/plugin update superpowers
+```
+
+Skills update automatically when you update the plugin.
 
 ---
 
