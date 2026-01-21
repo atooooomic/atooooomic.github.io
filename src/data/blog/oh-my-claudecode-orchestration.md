@@ -17,16 +17,6 @@ timezone: "America/New_York"
 
 If you've been following AI development tools lately, you've probably heard about the Anthropic OAuth controversy. After the dust settled, developers looking to maintain sophisticated multi-agent workflows with Claude found themselves searching for alternatives. Enter **oh-my-claudecode**—an elegant solution that brings the power of orchestrated AI development to Claude Code.
 
-<figure>
-  <img
-    src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    alt="Developer working with multiple screens"
-  />
-  <figcaption class="text-center">
-    Photo by <a href="https://www.pexels.com/photo/person-using-macbook-pro-on-person-s-lap-1181677/">Pexels</a>
-  </figcaption>
-</figure>
-
 ## Table of contents
 
 ## What is oh-my-claudecode?
