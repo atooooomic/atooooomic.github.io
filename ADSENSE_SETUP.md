@@ -38,16 +38,42 @@ GitHub Actions를 사용하는 경우:
 5. Value: `ca-pub-xxxxxxxxxxxxxxxx`
 6. **Add secret** 클릭
 
-## 5. 광고 단위 생성
+## 5. 광고 단위 생성 및 슬롯 ID 교체
+
+현재 블로그에는 다음 위치에 광고가 배치되어 있으며, **예시 슬롯 ID**를 사용하고 있습니다.
+AdSense에서 실제 광고 단위를 생성한 후 아래의 슬롯 ID를 교체해야 합니다.
+
+### 현재 배치된 광고 위치:
+
+| 위치 | 파일 | 현재 슬롯 ID | 설명 |
+|------|------|-------------|------|
+| 블로그 포스트 상단 | `src/layouts/PostDetails.astro:113` | `1234567890` | 제목 아래, 본문 시작 전 |
+| 블로그 포스트 하단 | `src/layouts/PostDetails.astro:123` | `0987654321` | 본문 끝, 태그 섹션 전 |
+| 메인 페이지 중간 | `src/pages/index.astro:76` | `1122334455` | Featured와 Recent Posts 사이 |
+
+### 광고 단위 생성 방법:
 
 1. AdSense 대시보드에서 **광고** > **광고 단위별** 선택
 2. **디스플레이 광고** 클릭
-3. 광고 이름 입력 (예: "Article Top", "Sidebar")
+3. 광고 이름 입력 (예: "Article Top", "Article Bottom", "Homepage Middle")
 4. 광고 크기 선택:
    - **반응형**: 자동으로 크기 조정 (권장)
    - **고정**: 특정 크기 지정
 5. **만들기** 클릭
 6. **광고 슬롯 ID** 복사 (형식: `1234567890`)
+
+### 슬롯 ID 교체:
+
+각 위치에 대해 광고 단위를 생성한 후, 해당 파일에서 슬롯 ID를 교체하세요:
+
+**예시: PostDetails.astro**
+```astro
+<!-- 변경 전 -->
+<AdSense slot="1234567890" format="horizontal" className="my-6" />
+
+<!-- 변경 후 (실제 슬롯 ID로 교체) -->
+<AdSense slot="실제슬롯ID" format="horizontal" className="my-6" />
+```
 
 ## 6. 광고 배치
 
