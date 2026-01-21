@@ -129,55 +129,26 @@ This isn't a dealbreaker—the per-session visibility is still valuable—but we
 
 ## If You Want More: CodexBar
 
-If you're on macOS and want comprehensive usage monitoring across multiple AI services (not just Claude), [CodexBar](https://github.com/steipete/CodexBar) is worth exploring.
+If you're on macOS and want comprehensive usage monitoring that's accessible anywhere—not just in your terminal—check out [CodexBar](/posts/codexbar-menubar-monitoring).
 
-### What CodexBar Offers
+CodexBar is a menu bar application that brings usage monitoring for multiple AI services directly to your macOS status bar. I've written a [detailed review](/posts/codexbar-menubar-monitoring) of my experience using it with Claude, Copilot, and Gemini, but here's the quick summary:
 
-CodexBar is a macOS menu bar application that monitors usage for a wide range of AI coding assistants:
+**Key advantages over terminal-based tools:**
+- Always visible, even when you're not in the terminal
+- Weekly limit tracking (the feature Claude HUD is missing)
+- Multi-service support (Claude, Copilot, Gemini, and many more)
+- Clean, polished native macOS UI
+- Cost analysis and usage breakdowns
 
-- Claude Code
-- OpenAI Codex
-- Cursor
-- GitHub Copilot
-- Gemini
-- And many more (Antigravity, Droid, z.ai, Kimi, Kiro, Vertex AI, Augment, Amp, JetBrains AI)
+The big draw is **universal accessibility**: whether you're coding, browsing documentation, or in Slack, your usage stats are right there in the menu bar. No application switching, no terminal dependency.
 
-### Key Advantages
-
-**1. Multi-Service Dashboard**
-
-If you use multiple AI coding tools, CodexBar provides a unified view. You can see all your usage metrics in one place without hunting through different web dashboards.
-
-**2. Weekly Limit Tracking**
-
-This is the big one: CodexBar shows both 5-hour session windows **and** weekly usage with countdown timers for when limits reset. It fills the gap that Claude HUD leaves open.
-
-**3. Visual Quota Indicators**
-
-The menu bar icon uses a two-bar system where the top bar represents your session window and the bottom shows weekly usage. At a glance, you can see both limits.
-
-**4. Cost Analysis**
-
-For Codex and Claude, CodexBar can analyze local usage data to show cost breakdowns over 30-day windows. This is particularly useful if you're managing budget for API usage.
-
-**5. CLI Integration**
-
-CodexBar includes a command-line interface (`codexbar`) for scripting and CI integration. You can run `codexbar cost --provider claude` to get usage reports programmatically.
-
-### Installation
+Installation is simple via Homebrew:
 
 ```bash
-# Via Homebrew
 brew install --cask steipete/tap/codexbar
-
-# Or download directly from GitHub releases
 ```
 
-Requires macOS 14+ (Sonoma) for the GUI, though the CLI works on Linux too.
-
-### Privacy Considerations
-
-CodexBar does local parsing by default, with browser cookies as an opt-in feature. No passwords are stored, and all data processing happens on your device. The app doesn't scan your disk or phone home.
+For a deeper dive into why CodexBar complements Claude HUD perfectly, read my [full CodexBar review](/posts/codexbar-menubar-monitoring).
 
 ## When to Use What
 
@@ -197,13 +168,13 @@ Here's my practical recommendation:
 - You use multiple AI coding services
 - Weekly quota tracking is important to you
 - You want cost analysis and usage breakdowns
-- You prefer a GUI over terminal-based monitoring
+- You prefer always-visible monitoring that works outside the terminal
 
 ### Use Both if:
 
 You want terminal-integrated monitoring (Claude HUD) **and** weekly limit tracking plus multi-service support (CodexBar). They're complementary, not competitive.
 
-I currently run both: Claude HUD for in-terminal awareness during active sessions, and CodexBar for checking weekly limits and monitoring other services I occasionally use.
+I currently run both: Claude HUD for in-terminal awareness during active sessions, and CodexBar for checking weekly limits and monitoring other services I occasionally use. Read more about this setup in my [CodexBar review](/posts/codexbar-menubar-monitoring).
 
 ## Why This Matters: Developer Experience
 
@@ -226,9 +197,11 @@ Stop opening your browser to check API usage. Your flow state will thank you.
 ## Resources
 
 - **Claude HUD GitHub**: [jarrodwatts/claude-hud](https://github.com/jarrodwatts/claude-hud)
-- **CodexBar GitHub**: [steipete/CodexBar](https://github.com/steipete/CodexBar)
-- **Claude Code**: [Official Anthropic tool](https://claude.ai/code)
 - **Claude HUD on Claude Plugin Hub**: [Plugin listing](https://www.claudepluginhub.com/plugins/davepoon-claude-hud-plugins-claude-hud)
+- **Claude Code**: [Official Anthropic tool](https://claude.ai/code)
+- **Related Posts**:
+  - [CodexBar: Your AI Usage Dashboard That's Always Visible](/posts/codexbar-menubar-monitoring) - Menu bar monitoring for multiple AI services
+  - [Oh My ClaudeCode: Multi-Agent Orchestration](/posts/oh-my-claudecode-orchestration) - Advanced orchestration setup
 
 ---
 
