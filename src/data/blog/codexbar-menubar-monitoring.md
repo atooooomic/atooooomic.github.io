@@ -260,17 +260,6 @@ Twice, CodexBar alerted me to Claude service degradation before I hit errors. In
 - You're not on macOS and don't need the GUI
 - You rarely hit quota limits and don't track usage
 
-## The Broader Ecosystem
-
-CodexBar is part of a growing ecosystem of AI development tooling that treats these services as first-class resources requiring proper instrumentation:
-
-- **[Claude HUD](/posts/claude-hud-usage-monitoring)**: Terminal-based session monitoring
-- **CodexBar**: Menu bar multi-service dashboard (this post)
-- **[oh-my-claudecode](/posts/oh-my-claudecode-orchestration)**: Multi-agent orchestration
-- **SessionWatcher**: Alternative menu bar tool focused on session limits
-
-Each tool fills a specific niche. The best setup depends on your workflow, but combining multiple tools often provides the most comprehensive coverage.
-
 ## Conclusion
 
 CodexBar delivers on its promise: comprehensive, always-visible AI service monitoring with a clean, native macOS UI. The multi-provider support, weekly quota tracking, and universal accessibility make it indispensable for developers juggling multiple AI coding services.
