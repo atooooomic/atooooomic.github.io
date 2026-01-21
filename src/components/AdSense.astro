@@ -1,0 +1,49 @@
+---
+import { PUBLIC_GOOGLE_ADSENSE_ID } from "astro:env/client";
+
+type Props = {
+  slot: string;
+  format?: string;
+  responsive?: boolean;
+  className?: string;
+};
+
+const {
+  slot,
+  format = "auto",
+  responsive = true,
+  className = "",
+} = Astro.props;
+---
+
+{
+  PUBLIC_GOOGLE_ADSENSE_ID && (
+    <div class={`adsense-container ${className}`}>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={PUBLIC_GOOGLE_ADSENSE_ID}
+        data-ad-slot={slot}
+        data-ad-format={format}
+        data-full-width-responsive={responsive ? "true" : "false"}
+      />
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  )
+}
+
+<style>
+  .adsense-container {
+    margin: 2rem 0;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .adsbygoogle {
+    display: block;
+  }
+</style>
