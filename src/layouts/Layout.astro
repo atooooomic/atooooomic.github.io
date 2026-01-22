@@ -4,6 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import {
   PUBLIC_GOOGLE_SITE_VERIFICATION,
   PUBLIC_GOOGLE_ADSENSE_ID,
+  PUBLIC_GOOGLE_ANALYTICS_ID,
 } from "astro:env/client";
 import { SITE } from "@/config";
 import "@/styles/global.css";
@@ -148,6 +149,26 @@ const structuredData = {
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${PUBLIC_GOOGLE_ADSENSE_ID}`}
           crossorigin="anonymous"
         ></script>
+      )
+    }
+
+    {
+      // If PUBLIC_GOOGLE_ANALYTICS_ID is set in the environment variable,
+      // include Google Analytics (gtag.js) script
+      // Learn more: https://support.google.com/analytics/answer/9539598
+      PUBLIC_GOOGLE_ANALYTICS_ID && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GOOGLE_ANALYTICS_ID}`}
+          ></script>
+          <script is:inline define:vars={{ analyticsId: PUBLIC_GOOGLE_ANALYTICS_ID }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', analyticsId);
+          </script>
+        </>
       )
     }
 
