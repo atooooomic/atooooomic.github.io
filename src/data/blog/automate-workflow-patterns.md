@@ -45,15 +45,7 @@ This file is a treasure trove of data about how you actually use AI in your deve
 
 ## Why Analyze Your Usage Patterns?
 
-Before we dive into the how, let's talk about the why. Analyzing your Claude Code history can help you:
-
-1. **Identify repetitive tasks** that could be automated with custom commands
-2. **Understand your workflow bottlenecks** and optimize them
-3. **Create personalized skills** that match your actual working style
-4. **Spot patterns** you didn't realize existed
-5. **Build better prompts** based on what actually works for you
-
-Think of it as **data-driven workflow optimization**. Instead of guessing what might help your productivity, you're using real data from hundreds (or thousands) of interactions.
+Analyzing your Claude Code history helps you identify repetitive tasks worth automating, understand workflow bottlenecks, and create personalized commands that match how you actually work. It's data-driven workflow optimization—using real patterns from your interactions instead of guessing what might help.
 
 ## The Analysis Process
 
@@ -143,92 +135,32 @@ Claude Code supports custom commands through the plugin system. Here's the gener
 
 You can create skills using the `.claudecode/skills/` directory in your project, or as part of a plugin if you want to share them.
 
-## Using the Scientist Agent
+## When This Works Best
 
-If you have [oh-my-claudecode](/posts/oh-my-claudecode-orchestration) installed, the **scientist agent** is perfect for this kind of analysis:
+This analysis is most valuable when you've been using Claude Code regularly for a while and notice yourself repeating similar prompts. If you just started or have highly variable tasks, you might not have enough data for meaningful patterns yet.
 
-```bash
-# The scientist agent excels at data analysis
-@history.jsonl analyze my usage patterns and provide
-detailed statistics with visualization recommendations
-```
-
-The scientist agent brings specialized data analysis capabilities:
-
-- Statistical clustering algorithms
-- Pattern recognition
-- Trend analysis
-- Structured output with findings and limitations
-
-## When This Analysis Shines
-
-Usage pattern analysis is particularly valuable if you:
-
-- **Have been using Claude Code for months** (more data = better patterns)
-- **Work on multiple similar projects** (recurring patterns across projects)
-- **Feel like you're repeating yourself** (automation opportunities)
-- **Want to optimize your workflow** (data-driven improvements)
-- **Build custom tooling** (inform your tool design with real usage data)
-
-## When to Skip It
-
-This analysis might not be as useful if you:
-
-- Just started using Claude Code (insufficient data)
-- Have highly variable, one-off tasks (few patterns to detect)
-- Already have highly optimized custom commands (patterns already addressed)
-
-## Beyond Automation: Learning About Yourself
-
-One unexpected benefit of this analysis: **you learn about your development patterns**.
-
-You might discover that you spend more time debugging than you realized, suggesting a need for better preventive measures like type safety and testing. Or you might notice that testing-related prompts are surprisingly rare, revealing a gap in your workflow.
-
-This kind of self-awareness is valuable even without automation. It helps you consciously improve your development practices.
-
-## Combining with Other Tools
-
-This analysis becomes even more powerful when combined with other Claude Code ecosystem tools:
-
-- **[Superpowers plugin](/posts/claude-code-superpowers-plugin)**: Use insights to inform your brainstorming sessions
-- **[oh-my-claudecode](/posts/oh-my-claudecode-orchestration)**: Leverage specialized agents for pattern-specific automation
-- **[Claude HUD](/posts/claude-hud-usage-monitoring)**: Monitor which automated commands save the most tokens
-
-The ecosystem works better when you understand your actual usage patterns.
+Beyond automation, you'll learn about your actual development habits—discovering you spend more time debugging than expected, or that testing prompts are surprisingly rare. This self-awareness helps you improve your workflow regardless of automation.
 
 ## Getting Started
 
-Ready to analyze your own patterns? Here's your action plan:
+Ready to analyze your own patterns?
 
-1. **Locate your history.jsonl file**
-2. **Decide on a sample size** (recent 1000 prompts is a good start)
-3. **Run the analysis** using the prompt template above
-4. **Review the clusters** and look for automation opportunities
-5. **Start simple** - create one or two custom commands based on your top patterns
-6. **Iterate** - refine based on actual usage
-
-## The Future: Automatic Pattern Detection
-
-Imagine if Claude Code could automatically analyze your patterns and **suggest custom commands proactively**. "I notice you've created 15 similar React components this month. Would you like me to generate a template?"
-
-The data is already there. The analysis capabilities exist. It's just a matter of building the integration.
+1. Locate your `history.jsonl` file
+2. Run the analysis using the prompt template above
+3. Review the clusters and identify automation opportunities
+4. Create one or two custom commands based on your top patterns
+5. Iterate and refine based on actual usage
 
 ## Conclusion
 
-Your `history.jsonl` file is more than a log—it's a mirror reflecting your actual development patterns. By analyzing this data, you can move from guesswork to evidence-based workflow optimization.
+Your `history.jsonl` file is more than a log—it's a mirror reflecting your actual development patterns. If you've been using Claude Code for a while, you definitely have patterns worth automating. The question is: are you ready to discover what they are?
 
-For developers serious about productivity, understanding your patterns is an investment that pays dividends in time saved and friction reduced.
-
-The question isn't whether you have patterns worth automating. If you've been using Claude Code for any length of time, you definitely do. The question is: are you ready to discover what they are?
-
-Start with a small analysis. See what you learn. You might be surprised by what your own history reveals.
+Start with the analysis prompt above. You might be surprised by what your own history reveals.
 
 ## Resources
 
-- **Claude Code Documentation**: [Official docs](https://docs.anthropic.com/en/docs/claude-code)
-- **oh-my-claudecode**: [Multi-agent orchestration with scientist agent](/posts/oh-my-claudecode-orchestration)
-- **Custom Skills Guide**: Check the `.claudecode/skills/` directory documentation
-- **Plugin Development**: [Claude Code plugin system](https://github.com/anthropics/claude-code/blob/main/docs/plugins.md)
+- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
+- [Claude Code plugin system](https://github.com/anthropics/claude-code/blob/main/docs/plugins.md)
 
 ---
 
