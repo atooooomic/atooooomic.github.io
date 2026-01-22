@@ -74,59 +74,20 @@ When you run this, Claude will:
 3. **Calculate statistics** on your most common task types
 4. **Suggest automation opportunities** based on the patterns it finds
 
-## Real Results: My Usage Analysis
+## What You'll Discover
 
-I ran this analysis on my own history using the **scientist agent** from [oh-my-claudecode](/posts/oh-my-claudecode-orchestration). Here's what I discovered from **905 prompts**:
+When you run this analysis, you'll typically see patterns emerge across categories like:
 
-### My Usage Breakdown
+- **UI/Component Work** - Repetitive component creation, styling patterns, layout fixes
+- **Code Modification/Refactoring** - Similar restructuring tasks, code quality improvements
+- **Debugging/Root Cause Analysis** - Error investigation, build failures, runtime issues
+- **Feature Implementation** - API integrations, database operations, new functionality
+- **Documentation** - README files, code comments, API docs
+- **Testing** - Unit tests, integration tests, test debugging
+- **Configuration** - Build tools, environment setup, deployment configs
+- **Research/Exploration** - Library comparisons, best practices, architecture decisions
 
-- **UI/Component Work**: 24.8% (225 prompts)
-  - Creating React components
-  - Styling with Tailwind
-  - Responsive design fixes
-
-- **Code Modification/Refactoring**: 18.3% (166 prompts)
-  - Restructuring functions
-  - Improving code quality
-  - Type system improvements
-
-- **Debugging/Root Cause Analysis**: 16.1% (146 prompts)
-  - Error investigation
-  - Build failures
-  - Runtime issues
-
-- **Feature Implementation**: 13.4% (122 prompts)
-  - Adding new functionality
-  - API integrations
-  - Database operations
-
-- **Documentation**: 9.7% (88 prompts)
-  - Writing README files
-  - Code comments
-  - API documentation
-
-- **Testing**: 8.2% (74 prompts)
-  - Unit tests
-  - Integration tests
-  - Test debugging
-
-- **Configuration**: 5.9% (54 prompts)
-  - Build tools
-  - Environment setup
-  - Deployment configs
-
-- **Research/Exploration**: 3.6% (30 prompts)
-  - Library comparisons
-  - Best practices
-  - Architecture decisions
-
-### The Aha Moment
-
-Seeing these numbers was eye-opening. I had no idea that **nearly a quarter of my time** was spent on UI and component work. This insight alone suggested several automation opportunities:
-
-- A custom command for scaffolding common component patterns
-- A skill for generating Tailwind-based responsive layouts
-- Templates for common UI patterns I kept recreating
+The key is identifying which categories dominate your workflow. These are your prime automation candidates.
 
 ## Turning Insights into Automation
 
@@ -199,33 +160,6 @@ The scientist agent brings specialized data analysis capabilities:
 - Trend analysis
 - Structured output with findings and limitations
 
-## Important Caveat: Token Consumption
-
-Here's the catch: **analyzing your entire history can consume significant tokens**, especially if you've been using Claude Code for a while.
-
-My 905-prompt analysis used approximately **50,000-75,000 tokens** (rough estimate based on context window usage). For larger histories with thousands of prompts, this could easily exceed 100,000 tokens.
-
-### Mitigation Strategies
-
-1. **Sample your history**: Analyze the most recent 500-1000 prompts instead of everything
-2. **Filter by date**: Focus on recent months for more relevant patterns
-3. **Pre-filter**: Remove obvious noise (very short prompts, system messages) before analysis
-4. **Batch analysis**: Break it into chunks by time period or task type
-
-You can pre-filter your history with a simple script:
-
-```bash
-# Extract only substantive prompts from recent history
-tail -n 1000 ~/.local/share/claude-code/history.jsonl | \
-  jq -c 'select(.message.length > 50)' > recent-history.jsonl
-```
-
-Then analyze the filtered file:
-
-```
-@recent-history.jsonl cluster these prompts by purpose...
-```
-
 ## When This Analysis Shines
 
 Usage pattern analysis is particularly valuable if you:
@@ -238,18 +172,17 @@ Usage pattern analysis is particularly valuable if you:
 
 ## When to Skip It
 
-This analysis might not be worth the token cost if you:
+This analysis might not be as useful if you:
 
 - Just started using Claude Code (insufficient data)
 - Have highly variable, one-off tasks (few patterns to detect)
-- Are on a tight token budget (the cost might not justify insights)
 - Already have highly optimized custom commands (patterns already addressed)
 
 ## Beyond Automation: Learning About Yourself
 
 One unexpected benefit of this analysis: **you learn about your development patterns**.
 
-Discovering that 16% of my prompts were debugging-related made me realize I should focus more on preventive measures like better type safety and testing. Seeing that only 8.2% of prompts were testing-related revealed a gap in my workflow.
+You might discover that you spend more time debugging than you realized, suggesting a need for better preventive measures like type safety and testing. Or you might notice that testing-related prompts are surprisingly rare, revealing a gap in your workflow.
 
 This kind of self-awareness is valuable even without automation. It helps you consciously improve your development practices.
 
@@ -284,7 +217,7 @@ The data is already there. The analysis capabilities exist. It's just a matter o
 
 Your `history.jsonl` file is more than a log—it's a mirror reflecting your actual development patterns. By analyzing this data, you can move from guesswork to evidence-based workflow optimization.
 
-Yes, the token cost is real. But for developers serious about productivity, understanding your patterns is an investment that pays dividends in time saved and friction reduced.
+For developers serious about productivity, understanding your patterns is an investment that pays dividends in time saved and friction reduced.
 
 The question isn't whether you have patterns worth automating. If you've been using Claude Code for any length of time, you definitely do. The question is: are you ready to discover what they are?
 
