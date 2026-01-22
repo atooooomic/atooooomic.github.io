@@ -60,6 +60,11 @@ export default defineConfig({
         context: "client",
         optional: true,
       }),
+      PUBLIC_GOOGLE_ANALYTICS_ID: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
     },
   },
   experimental: {
